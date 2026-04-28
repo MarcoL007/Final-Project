@@ -1,6 +1,6 @@
 import random
     # Starting by creating the settings first
-def get_game_setttings():
+def get_game_settings():
     settings = {"Easy": {"limit": 10, "attempts": 5},
                 "Medium": {"limit": 50, "attempts": 6},
                 "Hard": {"limit": 100, "attempts": 6}   }
@@ -13,20 +13,20 @@ def get_game_setttings():
 
     # Checking for invalid inputs when selecting the level
     if difficulty not in settings:
-        print("Invalid Input, Defalting to Easy.")
+        print("Invalid Input, Defaulting to Easy.")
         return settings["Easy"]
     return settings[difficulty]
 
 def run_guessing_session():
     # The code that will keep track of the number and the guesses.
-    config = get_game_setttings()
+    config = get_game_settings()
     target_num = random.randint(1, config["limit"])
     max_attempts = config['attempts']
     attempts = 0
     win = False
     # This gets the random number, starts attempt count and gets the setting that will be used.
 
-    print(f"\n I'm thinking of a number between 1 and {config['limit']}.")
+    print(f"\nI'm thinking of a number between 1 and {config['limit']}.")
     print(f"You have {max_attempts} attempts! Can you guess correctly?")
 
     # This loop will continue till the user runs out of attempts or guesses correctly
@@ -44,7 +44,7 @@ def run_guessing_session():
         else:
             print("Invalid input. Enter a whole number")
     if win == True:
-        print(f"COngratulations! You got it in {attempts}")
+        print(f"Congratulations! You got it in {attempts}")
     else:
         print(f"Better luck next time the correct number was {target_num}")
     # the loop checks if the guess is higher and lower and if out of attempts ends the game
