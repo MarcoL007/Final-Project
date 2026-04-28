@@ -49,5 +49,22 @@ def run_guessing_session():
         print(f"Better luck next time the correct number was {target_num}")
     # the loop checks if the guess is higher and lower and if out of attempts ends the game
 
+def main():
+    #creating the ability to replay and start the game 
+    print("---Welcome to Guess The Number---")
+    print(' How well is your intuition ready to find out??')
+    playing = True
+    #So while playing is True that will mean you are playing the game which will make the session run.
+    while playing:
+        run_guessing_session()
+        repeat = input("\nWould you like to play again? (Yes/No): ").capitalize()
+        if repeat != "Yes":
+            playing = False
+        
+    print("Thank You For Playing!")
+    print("Guess The Number 2... coming soon")
+
+if __name__ == "__main__":
+    main()
 
     
