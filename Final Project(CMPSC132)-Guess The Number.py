@@ -16,3 +16,6 @@ def get_game_setttings():
         print("Invalid Input, Defalting to Easy.")
         return settings["Easy"]
     return settings[difficulty]
+
+def run_guessing_session():
+    # The code that will keep track of the number and the guesses
