@@ -18,4 +18,12 @@ def get_game_setttings():
     return settings[difficulty]
 
 def run_guessing_session():
-    # The code that will keep track of the number and the guesses
+    # The code that will keep track of the number and the guesses.
+    config = get_game_setttings()
+    target_num = random.randint(1, config["limit"])
+    max_attempts = config['attempts']
+    attempts = 0
+    win = False
+    # This gets the random number, starts attempt count and gets the setting that will be used.
+
+    
