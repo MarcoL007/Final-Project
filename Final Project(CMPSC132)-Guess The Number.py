@@ -26,4 +26,28 @@ def run_guessing_session():
     win = False
     # This gets the random number, starts attempt count and gets the setting that will be used.
 
+    print(f"\n I'm thinking of a number between 1 and {config['limit']}.")
+    print(f"You have {max_attempts} attempts! Can you guess correctly?")
+
+    # This loop will continue till the user runs out of attempts or guesses correctly
+    while attempts < max_attempts and not win:
+        user_guess = input(f"\nAttempt {attempts + 1}/{max_attempts} - Enter guess: ")
+        if user_guess.isdigit():
+            guess = int(user_guess)
+            attempts += 1
+            if guess < target_num:
+                print("Too Low")
+            elif guess > target_num:
+                print("Too High")
+            else:
+                win = True
+        else:
+            print("Invalid input. Enter a whole number")
+    if win == True:
+        print(f"COngratulations! You got it in {attempts}")
+    else:
+        print(f"Better luck next time the correct number was {target_num}")
+    # the loop checks if the guess is higher and lower and if out of attempts ends the game
+
+
     
